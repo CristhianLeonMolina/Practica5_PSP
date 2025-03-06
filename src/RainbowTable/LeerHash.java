@@ -11,7 +11,6 @@ public class LeerHash
         System.out.println("Escribe el hash que quieres que descodifique:");
         String hashTeclado = sc.nextLine();
 
-
         try {
             File f = new File("Rainbow_Table.txt");
             FileReader fr = new FileReader(f);

@@ -54,7 +54,5 @@ public class CrearHash {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }

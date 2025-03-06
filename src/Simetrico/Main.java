@@ -15,7 +15,6 @@ public class Main {
             throw new RuntimeException(e);
         }
     }
-
     static SecretKey clave = kg.generateKey();
 
     public static void main(String[] args) {
@@ -69,8 +68,8 @@ public class Main {
             Cipher cifrador = Cipher.getInstance(clave.getAlgorithm());
 
             cifrador.init(Cipher.ENCRYPT_MODE, clave);
-            byte[] resultado1 = cifrador.doFinal(cifrar.getBytes());
-            return (resultado1);
+            byte[] resultado = cifrador.doFinal(cifrar.getBytes());
+            return (resultado);
 
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
@@ -94,6 +93,7 @@ public class Main {
             cifrador.init(Cipher.DECRYPT_MODE, clave);
             byte[] resultado = cifrador.doFinal(descifrar);
             return (new String(resultado));
+
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         } catch (NoSuchPaddingException e) {
