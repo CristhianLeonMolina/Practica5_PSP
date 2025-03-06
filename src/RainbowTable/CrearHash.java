@@ -41,7 +41,7 @@ public class CrearHash {
                 {
                     sb.append(String.format("%2X", hash[j]));
                 }
-                bw.write(claves.get(i) + ";" + String.valueOf(sb) + "\n");
+                bw.write(claves.get(i) + "," + String.valueOf(sb) + "\n");
             }
 
             bw.close();

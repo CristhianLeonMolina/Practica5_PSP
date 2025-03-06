@@ -1,9 +1,6 @@
 package RainbowTable;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.Scanner;
 
 public class LeerHash
@@ -20,8 +17,23 @@ public class LeerHash
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             boolean existe = false;
+            String hash = br.readLine();
+
+            while (hash != null && !existe)
+            {
+                String[] claves = hash.split(",");
+                if (claves[1].equalsIgnoreCase(hashTeclado))
+                {
+                    System.out.println("La contraseña es: " + claves[0]);
+                    existe = true;
+                }
+
+                hash = br.readLine();
+            }
 
         } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
