@@ -23,7 +23,7 @@ public class Main {
         se desencripta la contraseña y te la muestra*/
 
         String contrasena = "buenosDias1234";
-        byte[] hash = encriptar(contrasena);
+        byte[] encriptada = encriptar(contrasena);
         boolean correcto = true;
 
         System.out.println("Para recuperar la contraseña deberás contestar unas preguntas");
@@ -52,7 +52,7 @@ public class Main {
 
         if(correcto)
         {
-            System.out.println("Felicidades, has acertado, tu contraseña es " + desencriptar(hash));
+            System.out.println("Felicidades, has acertado, tu contraseña es " + desencriptar(encriptada));
         }
         else
         {
@@ -84,7 +84,8 @@ public class Main {
         }
     }
 
-    static String desencriptar(byte[] descifrar) {
+    static String desencriptar(byte[] descifrar)
+    {
         try {
             kg.init(256, null);
 
