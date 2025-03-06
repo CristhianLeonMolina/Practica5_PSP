@@ -105,6 +105,5 @@ public class Main {
         } catch (BadPaddingException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
